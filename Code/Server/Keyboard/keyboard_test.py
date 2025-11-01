@@ -34,11 +34,7 @@ class AppleKeyboardTest:
         return selected
 
     def select_keyboard(self, keyboard_devices: dict):
-        print("Select a keyboard by entering it's number: ")
-        for key in keyboard_devices:
-            print(f"{key}: {keyboard_devices[key]}")
-
-        num = input("Keyboard number: ")
+        num = input("Select a keyboard by entering it's number: ")
 
         if num not in keyboard_devices.keys():
             print("Incorrect value entered, keyboard not selected.")
