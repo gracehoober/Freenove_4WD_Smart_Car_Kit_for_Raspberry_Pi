@@ -17,7 +17,6 @@ class AppleKeyboardTest:
         devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 
         keyboard_devices = {}
-        print("Available input devices:")
         for i, device in enumerate(devices):
             print(f"  {i}: {device.path}: {device.name}")
             capabilities = device.capabilities()
@@ -34,12 +33,15 @@ class AppleKeyboardTest:
         return selected
 
     def select_keyboard(self, keyboard_devices: dict):
+        print("Available input devices:")
+        for key in keyboard_devices:
+            print(f"{key}: {keyboard_devices[key]}")
+
         num = input("Select a keyboard by entering it's number: ")
 
         if num not in keyboard_devices.keys():
             print("Incorrect value entered, keyboard not selected.")
             result = input("Try again? y/n ")
-            print(result, ": result from line 41")
 
             if result.lower() == "y" or result == "":
                 self.select_keyboard(keyboard_devices)
