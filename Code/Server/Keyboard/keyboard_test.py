@@ -38,13 +38,13 @@ class AppleKeyboardTest:
 
         if num not in keyboard_devices.keys():
             print("Incorrect value entered, keyboard not selected.")
-            result = input("Try again? y/n")
+            result = input("Try again? y/n ")
             print(result, ": result from line 41")
 
             if result.lower() == "y" or result == "":
                 self.select_keyboard(keyboard_devices)
             else:
-                return None
+                return
 
         return keyboard_devices[num]
 
