@@ -114,5 +114,5 @@ class AppleKeyboardTest:
 
 if __name__ == "__main__":
     print("Starting keyboard input test...")
-    AppleKeyboardTest.test_keyboard_input()
+    AppleKeyboardTest().test_keyboard_input()
     print("\nKeyboard test completed!")
