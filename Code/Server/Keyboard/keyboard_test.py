@@ -41,7 +41,7 @@ class AppleKeyboardTest:
             result = input("Try again? y/n")
             print(result, ": result from line 41")
 
-            if result.lower() == "y" or result is None:
+            if result.lower() == "y" or result == "":
                 self.select_keyboard(keyboard_devices)
             else:
                 return None
