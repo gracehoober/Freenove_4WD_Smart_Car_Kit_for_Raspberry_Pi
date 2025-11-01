@@ -16,19 +16,14 @@ class AppleKeyboardTest:
         """Find the connected Apple keyboard device"""
         devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 
-        print("Available input devices:")
-        for device in devices:
-            print(f"  {device.path}: {device.name}")
-
-        # Look for keyboard devices (they typically have key capabilities)
         keyboard_devices = {}
-        for device in devices:
+        print("Available input devices:")
+        for i, device in enumerate(devices):
+            print(f"  {i}: {device.path}: {device.name}")
             capabilities = device.capabilities()
-            i = 0
             # Check if device has key event capability
             if evdev.ecodes.EV_KEY in capabilities:
                 keyboard_devices[i] = device
-                i += 1
 
         if not keyboard_devices:
             print("No keyboard devices found!")
@@ -43,9 +38,9 @@ class AppleKeyboardTest:
         for key in keyboard_devices:
             print(f"{key}: {keyboard_devices[key]}")
 
-        selected = input("Keyboard number: ")
+        num = input("Keyboard number: ")
 
-        if selected not in keyboard_devices:
+        if num not in keyboard_devices.keys():
             print("Incorrect value entered, keyboard not selected.")
             result = input("Try again? y/n")
 
@@ -54,7 +49,7 @@ class AppleKeyboardTest:
             else:
                 return None
 
-        return selected
+        return keyboard_devices[num]
 
     def test_keyboard_input(self):
         """Test keyboard input and print feedback"""
