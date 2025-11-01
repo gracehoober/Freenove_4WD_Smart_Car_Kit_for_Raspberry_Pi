@@ -60,7 +60,7 @@ class AppleKeyboardTest:
         """Test keyboard input and print feedback"""
 
         try:
-            keyboard = self.find_keyboard_device()
+            keyboard = self.find_keyboard_devices()
             if not keyboard:
                 return None
 
