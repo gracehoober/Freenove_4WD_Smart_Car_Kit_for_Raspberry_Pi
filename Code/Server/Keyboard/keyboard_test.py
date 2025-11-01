@@ -25,6 +25,8 @@ class AppleKeyboardTest:
             if evdev.ecodes.EV_KEY in capabilities:
                 keyboard_devices[i] = device
 
+        print("Keyboards found: ", keyboard_devices)
+
         if not keyboard_devices:
             print("No keyboard devices found!")
             return None
