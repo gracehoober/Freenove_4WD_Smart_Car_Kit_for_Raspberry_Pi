@@ -5,7 +5,7 @@ This project extends the original [Freenove 4WD Smart Car Kit](https://github.co
 ## Project Goal
 Enable real-time car control using Apple Bluetooth keyboard arrow keys:
 - ⬆️ **UP Arrow** → Move Forward
-- ⬇️ **DOWN Arrow** → Move Backward  
+- ⬇️ **DOWN Arrow** → Move Backward
 - ⬅️ **LEFT Arrow** → Turn Left
 - ➡️ **RIGHT Arrow** → Turn Right
 - **No Key Pressed** → Stop Car
@@ -51,7 +51,7 @@ sudo apt install python3-evdev
 
 ### 3. Test Keyboard Input
 ```bash
-cd Code/Server
+cd Code/Server/Keyboard
 sudo python3 keyboard_test.py
 ```
 
@@ -84,7 +84,7 @@ Integration with existing Freenove motor control functions for real-time car con
 
 ### Communication Chain
 ```
-Apple Keyboard → Bluetooth → Pi Hardware → Linux Kernel → 
+Apple Keyboard → Bluetooth → Pi Hardware → Linux Kernel →
 evdev → Python Script → SSH Terminal → User Feedback
 ```
 
